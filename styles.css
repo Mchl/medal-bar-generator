@@ -1,4 +1,6 @@
-#canvas {
+.bar {
     height: 38px;
     width: 140px;
+    margin: 5px;
+    display: block;
 }

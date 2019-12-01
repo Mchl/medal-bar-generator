@@ -1,6 +1,3 @@
-const canvas = document.getElementById('canvas')
-const ctx = canvas.getContext('2d')
-
 const colors = {
   "Air Force Yellow": [255,205,0],
   "Apple Red": [213,0,50],
@@ -104,6 +101,11 @@ const colors = {
 }
 const colorKeys = Object.keys(colors)
 
+const getRandomColor = () => {
+  const colorKey = colorKeys[Math.trunc(Math.random() * colorKeys.length)]
+  return colors[colorKey]
+}
+
 const verticalGrille = (canvas) => {
   const ctx = canvas.getContext('2d')
   ctx.fillStyle = `rgba(0, 0, 0, 0.25)`
@@ -112,28 +114,24 @@ const verticalGrille = (canvas) => {
   }
 }
 
-const randomSolidRectangles = canvas => {
+const randomSolidRectangles = (canvas, numberOfRectangles) => {
   const ctx = canvas.getContext('2d')
-  const numberOfRectangles = 2 + Math.trunc(Math.random() * 8)
+  numberOfRectangles = numberOfRectangles || 2 + Math.trunc(Math.random() * 8)
 
   for (let i = 0; i < numberOfRectangles; i++) {
-    const colorKey = colorKeys[Math.trunc(Math.random() * colorKeys.length)]
-    const [r,g,b] = colors[colorKey]
+    const [r,g,b] = getRandomColor()
 
     ctx.fillStyle = `rgba(${r}, ${g}, ${b}, 1)`
     ctx.fillRect(i * canvas.width/numberOfRectangles, 0, canvas.width/numberOfRectangles, canvas.height)
   }
 }
 
-const symmetricSolidRectangles = canvas => {
+const symmetricSolidRectanglesEven = (canvas, numberOfRectangles)  => {
   const ctx = canvas.getContext('2d')
-  const numberOfRectangles = Math.round((2 + Math.trunc(Math.random() * 8)) / 2)
-  console.log({numberOfRectangles})
-
+  numberOfRectangles = numberOfRectangles || Math.round((2 + Math.trunc(Math.random() * 8)) / 2)
 
   for (let i = 0; i < numberOfRectangles; i++) {
-    const colorKey = colorKeys[Math.trunc(Math.random() * colorKeys.length)]
-    const [r,g,b] = colors[colorKey]
+    const [r,g,b] = getRandomColor()
 
     ctx.fillStyle = `rgba(${r}, ${g}, ${b}, 1)`
     ctx.fillRect(i * canvas.width/(numberOfRectangles * 2), 0, canvas.width/(numberOfRectangles * 2), canvas.height)
@@ -141,9 +139,66 @@ const symmetricSolidRectangles = canvas => {
   }
 }
 
-symmetricSolidRectangles(canvas)
+const symmetricSolidRectanglesOdd = (canvas, numberOfRectangles)  => {
+  const ctx = canvas.getContext('2d')
+  numberOfRectangles = numberOfRectangles || Math.trunc(Math.random() * 5)
 
-verticalGrille(canvas)
+  const rectangleWidth = canvas.width/(1 + 2 * (numberOfRectangles - 1))
+
+  for (let i = 0; i < numberOfRectangles; i++) {
+    const [r,g,b] = getRandomColor()
+
+    ctx.fillStyle = `rgba(${r}, ${g}, ${b}, 1)`
+
+    ctx.fillRect(i * rectangleWidth, 0, rectangleWidth, canvas.height)
+    ctx.fillRect(canvas.width - (i+1) * rectangleWidth, 0, rectangleWidth, canvas.height)
+  }
+}
+
+let header = document.createElement('h1')
+header.innerText = 'Asymmetric solid rectangles'
+document.body.appendChild(header)
+
+for (let numberOfRectangles = 1; numberOfRectangles <=3; numberOfRectangles++) {
+  const canvas = document.createElement('canvas')
+  canvas.classList.add('bar')
+
+  randomSolidRectangles(canvas, numberOfRectangles)
+  verticalGrille(canvas)
+
+  document.body.appendChild(canvas)
+}
+
+header = document.createElement('h1')
+header.innerText = 'Symmetric solid rectangles even'
+document.body.appendChild(header)
+
+for (let numberOfRectangles = 1; numberOfRectangles <=5; numberOfRectangles++) {
+  const canvas = document.createElement('canvas')
+  canvas.classList.add('bar')
+
+  symmetricSolidRectanglesEven(canvas, numberOfRectangles)
+  verticalGrille(canvas)
+
+  document.body.appendChild(canvas)
+}
+
+header = document.createElement('h1')
+header.innerText = 'Symmetric solid rectangles odd'
+document.body.appendChild(header)
+
+for (let numberOfRectangles = 1; numberOfRectangles <=5; numberOfRectangles++) {
+  const canvas = document.createElement('canvas')
+  canvas.classList.add('bar')
+
+  symmetricSolidRectanglesOdd(canvas, numberOfRectangles)
+  verticalGrille(canvas)
+
+  document.body.appendChild(canvas)
+}
+
+
+
 
 
 
