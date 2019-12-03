@@ -6,7 +6,7 @@ const symmetricSolidRectanglesOdd = (canvas, numberOfRectangles)  => {
   const palette = selectPalette(Math.round(3 + prng() * 2))
 
   numberOfRectangles = numberOfRectangles || Math.trunc(prng() * 5)
-  const rectangleWidth = canvas.width/(1 + 2 * (numberOfRectangles - 1))
+  const rectangleWidth = Math.round(canvas.width/(1 + 2 * (numberOfRectangles - 1)))
 
   for (let i = 0; i < numberOfRectangles; i++) {
     const [r,g,b] = getRandomColor(palette)
