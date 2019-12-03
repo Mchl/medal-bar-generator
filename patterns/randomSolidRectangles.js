@@ -9,7 +9,7 @@ const randomSolidRectangles = (canvas, numberOfRectangles) => {
   const rectangleWidth = Math.round(canvas.width/numberOfRectangles)
 
   for (let i = 0; i < numberOfRectangles; i++) {
-    const [r,g,b] = getRandomColor(palette)
+    const [r,g,b] = palette[i]
 
     ctx.fillStyle = `rgba(${r}, ${g}, ${b}, 1)`
     ctx.fillRect(i * rectangleWidth, 0, rectangleWidth, canvas.height)

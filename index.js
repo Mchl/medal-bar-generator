@@ -18,7 +18,7 @@ const layouts = [
     pattern: symmetricSolidRectanglesEven,
     header: 'Symmetric solid rectangles even',
     numberOfRectangles: {
-      min: 1,
+      min: 2,
       max: 5
     }
   },
@@ -26,7 +26,7 @@ const layouts = [
     pattern: symmetricSolidRectanglesOdd,
     header: 'Symmetric solid rectangles odd',
     numberOfRectangles: {
-      min: 1,
+      min: 2,
       max: 5
     }
   },
