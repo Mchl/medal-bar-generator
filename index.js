@@ -100,9 +100,20 @@ const colors = {
   "Yellow": [255,199,44],
 }
 const colorKeys = Object.keys(colors)
+const url = new URL(window.location)
+
+let seed = Date.now()
+if (url.searchParams.get('seed')) {
+  seed = url.searchParams.get('seed')
+} else {
+  url.searchParams.set('seed', seed)
+}
+window.history.pushState({seed}, '', url)
+
+const prng = new Alea(seed)
 
 const getRandomColor = () => {
-  const colorKey = colorKeys[Math.trunc(Math.random() * colorKeys.length)]
+  const colorKey = colorKeys[Math.trunc(prng() * colorKeys.length)]
   return colors[colorKey]
 }
 
@@ -116,7 +127,7 @@ const verticalGrille = (canvas) => {
 
 const randomSolidRectangles = (canvas, numberOfRectangles) => {
   const ctx = canvas.getContext('2d')
-  numberOfRectangles = numberOfRectangles || 2 + Math.trunc(Math.random() * 8)
+  numberOfRectangles = numberOfRectangles || 2 + Math.trunc(prng() * 8)
 
   for (let i = 0; i < numberOfRectangles; i++) {
     const [r,g,b] = getRandomColor()
@@ -128,7 +139,7 @@ const randomSolidRectangles = (canvas, numberOfRectangles) => {
 
 const symmetricSolidRectanglesEven = (canvas, numberOfRectangles)  => {
   const ctx = canvas.getContext('2d')
-  numberOfRectangles = numberOfRectangles || Math.round((2 + Math.trunc(Math.random() * 8)) / 2)
+  numberOfRectangles = numberOfRectangles || Math.round((2 + Math.trunc(prng() * 8)) / 2)
 
   for (let i = 0; i < numberOfRectangles; i++) {
     const [r,g,b] = getRandomColor()
@@ -141,7 +152,7 @@ const symmetricSolidRectanglesEven = (canvas, numberOfRectangles)  => {
 
 const symmetricSolidRectanglesOdd = (canvas, numberOfRectangles)  => {
   const ctx = canvas.getContext('2d')
-  numberOfRectangles = numberOfRectangles || Math.trunc(Math.random() * 5)
+  numberOfRectangles = numberOfRectangles || Math.trunc(prng() * 5)
 
   const rectangleWidth = canvas.width/(1 + 2 * (numberOfRectangles - 1))
 
