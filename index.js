@@ -131,6 +131,14 @@ const verticalGrille = (canvas) => {
   }
 }
 
+const createBarCanvas = () => {
+  const canvas = document.createElement('canvas')
+  canvas.setAttribute('width', 140)
+  canvas.setAttribute('height', 38)
+  canvas.classList.add('bar')
+  return canvas
+}
+
 const randomSolidRectangles = (canvas, numberOfRectangles) => {
   const ctx = canvas.getContext('2d')
   const palette = selectPalette(3)
@@ -185,8 +193,7 @@ header.innerText = 'Asymmetric solid rectangles'
 document.body.appendChild(header)
 
 for (let numberOfRectangles = 1; numberOfRectangles <=3; numberOfRectangles++) {
-  const canvas = document.createElement('canvas')
-  canvas.classList.add('bar')
+  const canvas = createBarCanvas()
 
   randomSolidRectangles(canvas, numberOfRectangles)
   verticalGrille(canvas)
@@ -199,8 +206,7 @@ header.innerText = 'Symmetric solid rectangles even'
 document.body.appendChild(header)
 
 for (let numberOfRectangles = 1; numberOfRectangles <=5; numberOfRectangles++) {
-  const canvas = document.createElement('canvas')
-  canvas.classList.add('bar')
+  const canvas = createBarCanvas()
 
   symmetricSolidRectanglesEven(canvas, numberOfRectangles)
   verticalGrille(canvas)
@@ -213,8 +219,7 @@ header.innerText = 'Symmetric solid rectangles odd'
 document.body.appendChild(header)
 
 for (let numberOfRectangles = 1; numberOfRectangles <=5; numberOfRectangles++) {
-  const canvas = document.createElement('canvas')
-  canvas.classList.add('bar')
+  const canvas = createBarCanvas()
 
   symmetricSolidRectanglesOdd(canvas, numberOfRectangles)
   verticalGrille(canvas)
