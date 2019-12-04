@@ -1,3 +1,4 @@
+export {default as devices} from './devices.js'
 export {default as goldenFrame} from './goldenFrame.js'
 export {default as verticalGrille} from './verticalGrille.js'
 export {default as randomSolidRectangles} from './randomSolidRectangles.js'

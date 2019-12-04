@@ -1,4 +1,4 @@
-import {goldenFrame, verticalGrille} from './patterns/index.js'
+import {goldenFrame, verticalGrille, devices} from './patterns/index.js'
 import prng from './prng/index.js'
 
 const createBarCanvas = () => {
@@ -17,7 +17,9 @@ const paintBar = pattern => numberOfRectangles => {
   if (prng() <= 0.1) {
     goldenFrame(canvas)
   }
-
+  if (prng() <= 0.3) {
+    devices(canvas)
+  }
 
   document.body.appendChild(canvas)
 }
