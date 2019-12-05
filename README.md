@@ -17,7 +17,7 @@ That's why I decided to make an application that would generate designs similar 
 
 ## Where?
 
-[See it in action here!](https://mchl.github.io/medal-bar-generator/?utm_source=github-readme&utm_content=see-it-in-action-link)
+[See it in action here!](https://mchl.github.io/medal-bar-generator/?utm_source=github-readme&utm_medium=web&utm_campaign=github&utm_content=see-it-in-action-link)
 
 ## Assets used and their licenses
 
