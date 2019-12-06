@@ -5,7 +5,7 @@ const symmetricSolidRectanglesOdd = (canvas, numberOfRectangles)  => {
   const ctx = canvas.getContext('2d')
   const palette = selectPalette(Math.round(3 + prng() * 2))
 
-  numberOfRectangles = numberOfRectangles || Math.trunc(prng() * 5)
+  numberOfRectangles = numberOfRectangles || 2 + Math.trunc(prng() * 5)
   const rectangleWidth = Math.round(canvas.width/(1 + 2 * (numberOfRectangles - 1)))
 
   for (let i = 0; i < numberOfRectangles; i++) {
