@@ -6,11 +6,19 @@ const createBarCanvas = () => {
   canvas.setAttribute('width', 140)
   canvas.setAttribute('height', 38)
   canvas.classList.add('bar')
+  document.body.appendChild(canvas)
   return canvas
 }
 
-const paintBar = pattern => numberOfRectangles => {
-  const canvas = createBarCanvas()
+const clearCanvas = canvas => {
+  const ctx = canvas.getContext('2d')
+  ctx.clearRect(0, 0, canvas.width, canvas.height)
+}
+
+const paintBar = pattern => ({canvas, numberOfRectangles} = {}) => {
+  canvas = canvas || createBarCanvas()
+
+  clearCanvas(canvas)
 
   pattern(canvas, numberOfRectangles)
   horizontalGrille(canvas)
@@ -21,7 +29,6 @@ const paintBar = pattern => numberOfRectangles => {
     devices(canvas)
   }
 
-  document.body.appendChild(canvas)
 }
 
 export default paintBar

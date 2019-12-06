@@ -5,7 +5,8 @@ const randomSolidRectangles = (canvas, numberOfRectangles) => {
   const ctx = canvas.getContext('2d')
   const palette = selectPalette(3)
 
-  numberOfRectangles = numberOfRectangles || 2 + Math.trunc(prng() * 8)
+  // Single color ribbons are a bit boring, so let's cull them
+  numberOfRectangles = numberOfRectangles || prng() < 0.05 ? 1 : 2 + Math.round(prng())
   const rectangleWidth = Math.round(canvas.width/numberOfRectangles)
 
   for (let i = 0; i < numberOfRectangles; i++) {

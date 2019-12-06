@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Medal bar generator - debug page</title>
+    <title>Medal bar generator</title>
     <link rel="stylesheet" href="styles.css" />
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-1048101-2"></script>
@@ -15,7 +15,7 @@
     </script>
 </head>
 <body>
-    <div style="display:none;">
+    <div id="hiddenAssets" style="display:none;">
         <img id="arrowhead"
              src="images/arrowhead.png"
              height="160" width="200" />
@@ -26,7 +26,16 @@
              src="images/serviceStarSilver.png"
              height="140" width="144" />
     </div>
+
+    <button id="buttonNew">Make a new one!</button>
+    <canvas id="canvas" class="bar" width="140" height="38"></canvas>
+    <h1>What is this?</h1>
+    <p><a href="https://github.com/Mchl/medal-bar-generator/blob/master/README.md">Read explanation here</a></p>
+    <h1>I want more!</h1>
+    <p><a href="wildMode.html">Go wild then!</a></p>
+
+
     <script src="https://gitcdn.xyz/repo/coverslide/node-alea/master/alea.js"></script>
-    <script src="debug.js" type="module"></script>
+    <script src="index.js" type="module"></script>
 </body>
 </html>

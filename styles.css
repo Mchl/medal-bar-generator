@@ -1,4 +1,18 @@
+body {
+    background: darkkhaki;
+}
+
+h1 {
+    font-family: sans-serif;
+}
+
 .bar {
     margin: 5px;
     display: block;
+}
+
+#buttonNew {
+    height: 2rem;
+    width: 12rem;
+    font-size: 1.2rem;
 }

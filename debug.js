@@ -43,6 +43,6 @@ layouts.forEach(layout => {
     numberOfRectangles <= layout.numberOfRectangles.max;
     numberOfRectangles++
   ) {
-    paintPattern(numberOfRectangles)
+    paintPattern({numberOfRectangles})
   }
 })
