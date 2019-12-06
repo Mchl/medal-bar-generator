@@ -17,7 +17,6 @@ const patterns = [
 
 const paintNewPattern = canvas => {
   const pattern = patterns[(Math.trunc(prng() * patterns.length))]
-  console.log({pattern})
   const paintPattern = paintBar(pattern)
 
   paintPattern({canvas})
