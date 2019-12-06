@@ -2,6 +2,8 @@
 
 This is a little application which procedurally generates fake [medal ribbons][Wikipedia: Medal ribbon]
 
+![](doc/1575671063675.png)![](doc/1575671121129.png)![](doc/1575671138071.png)![](doc/1575671157455.png)
+
 ## Why?
 
 I was looking for some kind of (digital) badges that I could award to members of my team for their accomplishments. 
