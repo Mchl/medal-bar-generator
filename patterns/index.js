@@ -1,6 +1,6 @@
 export {default as devices} from './devices.js'
 export {default as goldenFrame} from './goldenFrame.js'
-export {default as verticalGrille} from './verticalGrille.js'
+export {default as horizontalGrille} from './horizontalGrille.js'
 export {default as randomSolidRectangles} from './randomSolidRectangles.js'
 export {default as symmetricSolidRectanglesEven} from './symmetricSolidRectanglesEven.js'
 export {default as symmetricSolidRectanglesOdd} from './symmetricSolidRectanglesOdd.js'

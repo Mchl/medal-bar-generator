@@ -14,7 +14,7 @@ I haven't decided yet if I'm going to use it for the initial purpose, but I've l
 
 * The application has a couple of general ribbon layouts to choose from (both symmetric and asymmetric). 
 * It selects a color palette for a ribbon from an [official list used by US Military][Wikipedia: Medal ribbon]
-* It applies a vertical grille pattern to simulate ribbon threads
+* It applies a horizontal grille pattern to simulate ribbon threads
 * Finally it randomly decides whether to apply some [award devices][Wikipedia: United States military award devices]
   At this point devices available are the [gold frame][Wikipedia: Gold frame], [the arrowhead][Wikipedia: Arrowhead device]
   and the silver and bronze [service stars][Wikipedia: Service star].      

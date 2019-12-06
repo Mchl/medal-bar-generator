@@ -1,4 +1,4 @@
-const verticalGrille = (canvas) => {
+const horizontalGrille = (canvas) => {
   const ctx = canvas.getContext('2d')
   ctx.fillStyle = `rgba(0, 0, 0, 0.25)`
   for (let y = Math.round(canvas.height / 64); y < canvas.height; y+= Math.round(canvas.height / 16)) {
@@ -6,4 +6,4 @@ const verticalGrille = (canvas) => {
   }
 }
 
-export default verticalGrille
+export default horizontalGrille

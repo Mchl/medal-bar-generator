@@ -1,4 +1,4 @@
-import {goldenFrame, verticalGrille, devices} from './patterns/index.js'
+import {goldenFrame, horizontalGrille, devices} from './patterns/index.js'
 import prng from './prng/index.js'
 
 const createBarCanvas = () => {
@@ -13,7 +13,7 @@ const paintBar = pattern => numberOfRectangles => {
   const canvas = createBarCanvas()
 
   pattern(canvas, numberOfRectangles)
-  verticalGrille(canvas)
+  horizontalGrille(canvas)
   if (prng() <= 0.1) {
     goldenFrame(canvas)
   }
