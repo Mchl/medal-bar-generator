@@ -33,10 +33,7 @@ Whatever I typed in my IDE is the code that runs in your browser.
 If you're on any fairly recent or 'evergreen' browser, it should work fine. 
 If it doesn't work for your browser... well I don't really plan to work on extending support. 
 It's just not that kind of project, sorry. Give it a go in Chromium, Chrome, Firefox, Safari, even latest Edge should be ok.
-
-[Alea][Github: node-alea] is used as seedable pseudo random number generator.
-It is loaded from external CDN to avoid copying its code into this repository.
-If the CDN fails on first try, refresh page. If it fails consistently - [let me know by creating an issue][Github: create new issue]. 
+If it fails in these modern browsers [let me know by creating an issue][Github: create new issue]. 
 
 ## Where?
 
